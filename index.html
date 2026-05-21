@@ -14,7 +14,16 @@
         justify-content: center; /* 水平居中 */
         align-items: center; /* 垂直居中 */
         font-family: "Microsoft YaHei", sans-serif;
-        background-color: #f5f5f5; /* 浅灰色背景，突出黑框 */
+        background: linear-gradient(
+          135deg,
+          #ccff00 0%,
+          #00ffcc 25%,
+          #0066ff 50%,
+          #00ffcc 75%,
+          #ccff00 100%
+        );
+        background-size: 200% 200%;
+        animation: gradientMove 8s ease infinite;
       }
 
       /* 左上角学号样式 */
@@ -84,6 +93,17 @@
         background-color: #ccc;
         cursor: not-allowed;
       }
+      @keyframes gradientMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
     </style>
   </head>
   <body>
@@ -98,6 +118,7 @@
         >Claude Code介绍作业</a
       >
       <a href="taidubiaoqian/taidubiaoyu.html" class="link-item">态度标语</a>
+      <a href="播放器图标/bofangqi.html" class="link-item">CSS盒子模型作业</a>
     </div>
 
     <script>
