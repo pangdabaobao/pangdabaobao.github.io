@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>弹性布局焦点图作业</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: "微软雅黑", sans-serif;
+      }
+
+      .slider {
+        width: 616px;
+        position: relative;
+      }
+
+      .main-img {
+        display: block;
+        width: 616px;
+        height: 237px;
+      }
+
+      .arrow-left,
+      .arrow-right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 49px;
+        height: 49px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .arrow-left {
+        left: 0;
+      }
+      .arrow-right {
+        right: 0;
+      }
+
+      .arrow-left:hover,
+      .arrow-right:hover {
+        opacity: 0.7;
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      .dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 10px;
+      }
+
+      .dot {
+        width: 12px;
+        height: 11px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+      <img src="banner1.jpg" alt="banner" class="main-img" />
+
+      <img src="arrow1.png" alt="左箭头" class="arrow-left" id="leftBtn" />
+      <img src="arrow2.png" alt="右箭头" class="arrow-right" id="rightBtn" />
+
+      <div class="dots" id="dotsArea"></div>
+    </div>
+
+    <script>
+      const dotsArea = document.getElementById("dotsArea");
+      const leftBtn = document.getElementById("leftBtn");
+      const rightBtn = document.getElementById("rightBtn");
+
+      const dotCount = 4;
+      let activeIndex = 0;
+
+      function createDots() {
+        dotsArea.innerHTML = "";
+        for (let i = 0; i < dotCount; i++) {
+          let dot = document.createElement("img");
+          dot.className = "dot";
+          dot.src = i === activeIndex ? "point2.png" : "point1.png";
+          dotsArea.appendChild(dot);
+        }
+      }
+
+      function refreshDots() {
+        let dots = document.querySelectorAll(".dot");
+        for (let i = 0; i < dots.length; i++) {
+          dots[i].src = i === activeIndex ? "point2.png" : "point1.png";
+        }
+      }
+
+      function moveLeft() {
+        if (activeIndex > 0) {
+          activeIndex--;
+          refreshDots();
+        }
+      }
+
+      function moveRight() {
+        if (activeIndex < dotCount - 1) {
+          activeIndex++;
+          refreshDots();
+        }
+      }
+
+      leftBtn.onclick = moveLeft;
+      rightBtn.onclick = moveRight;
+
+      createDots();
+    </script>
+  </body>
+</html>
