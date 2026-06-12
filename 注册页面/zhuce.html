@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>网上书城注册</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 100%;
+        min-height: 100vh;
+        background-color: #fdd9b5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .fangxing1 {
+        width: 86%;
+        background-color: red;
+        text-align: center;
+        padding: 28px 0;
+        margin-bottom: 30px;
+      }
+
+      .wenzi1 {
+        font-family: "隶书", "LiSu", "华文隶书", cursive;
+        font-size: 48px;
+        color: white;
+      }
+
+      .baisebiankuang {
+        background-color: #87ceeb;
+        border: 5px solid white;
+        width: 650px;
+        padding: 30px 35px 40px 35px;
+      }
+
+      .fangxing2 {
+        background-color: yellow;
+        padding: 14px 20px;
+        margin-bottom: 35px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .jiahaotu {
+        width: 32px;
+        height: 32px;
+        background-image: url("加号.png");
+        background-size: cover;
+      }
+
+      .wenzi2 {
+        font-size: 28px;
+        font-weight: bold;
+        color: black;
+      }
+
+      .shurukuangjihe {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+        margin-bottom: 35px;
+      }
+
+      .inputwaikuang {
+        background-color: white;
+        border: 1px solid #aaa;
+        display: flex;
+        align-items: center;
+        padding: 12px 18px;
+        width: 350px;
+      }
+
+      .shurunei {
+        border: none;
+        outline: none;
+        font-size: 18px;
+        margin-left: 14px;
+        width: 100%;
+      }
+
+      .shurunei::placeholder {
+        color: #b0b0b0;
+      }
+
+      .tubiao {
+        width: 26px;
+        height: 26px;
+        background-size: cover;
+      }
+
+      .rentou {
+        background-image: url("人头.png");
+      }
+
+      .yaoshi {
+        background-image: url("钥匙.png");
+      }
+
+      .xinfeng {
+        background-image: url("信封.png");
+      }
+
+      .zhuceanniu {
+        width: 350px;
+        background-color: red;
+        border: none;
+        padding: 14px 0;
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .anniujuzhong {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fangxing1">
+      <div class="wenzi1">网上书城</div>
+    </div>
+
+    <div class="baisebiankuang">
+      <div class="fangxing2">
+        <div class="jiahaotu"></div>
+        <span class="wenzi2">注册新用户</span>
+      </div>
+
+      <div class="shurukuangjihe">
+        <div class="inputwaikuang">
+          <div class="tubiao rentou"></div>
+          <input
+            type="text"
+            class="shurunei"
+            id="yonghuming"
+            placeholder="用户名"
+          />
+        </div>
+        <div class="inputwaikuang">
+          <div class="tubiao yaoshi"></div>
+          <input
+            type="password"
+            class="shurunei"
+            id="mima"
+            placeholder="密码"
+          />
+        </div>
+        <div class="inputwaikuang">
+          <div class="tubiao yaoshi"></div>
+          <input
+            type="password"
+            class="shurunei"
+            id="querenmima"
+            placeholder="确认密码"
+          />
+        </div>
+        <div class="inputwaikuang">
+          <div class="tubiao xinfeng"></div>
+          <input
+            type="email"
+            class="shurunei"
+            id="email"
+            placeholder="电子邮件"
+          />
+        </div>
+      </div>
+
+      <div class="anniujuzhong">
+        <button type="button" class="zhuceanniu" id="qingchuBtn">
+          注册新用户
+        </button>
+      </div>
+    </div>
+
+    <script>
+      var yonghuming = document.getElementById("yonghuming");
+      var mima = document.getElementById("mima");
+      var querenmima = document.getElementById("querenmima");
+      var email = document.getElementById("email");
+      var qingchuBtn = document.getElementById("qingchuBtn");
+
+      qingchuBtn.onclick = function () {
+        yonghuming.value = "";
+        mima.value = "";
+        querenmima.value = "";
+        email.value = "";
+      };
+    </script>
+  </body>
+</html>
