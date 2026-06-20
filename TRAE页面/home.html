@@ -17,10 +17,10 @@
         color: #fff;
         min-height: 100vh;
         overflow-x: hidden;
+        padding-top: 54px;
       }
 
-      /* ========== 新导航栏样式 ========== */
-      .nav {
+      .dao-hang {
         position: fixed;
         top: 0;
         left: 0;
@@ -37,7 +37,7 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.06);
       }
 
-      .nav-left {
+      .dao-hang-zuo {
         display: flex;
         align-items: center;
         gap: 26px;
@@ -47,23 +47,23 @@
         font-weight: 800;
         font-size: 18px;
         letter-spacing: 1px;
-        border: 1.5px solid #f5f5f5;
         padding: 2px 7px;
         border-radius: 4px;
         line-height: 1;
         color: #f5f5f5;
         text-decoration: none;
+        border: none;
       }
 
-      .menu {
+      .cai-dan {
         display: flex;
         align-items: center;
         gap: 22px;
         list-style: none;
       }
 
-      .menu a,
-      .menu-item {
+      .cai-dan a,
+      .cai-dan-xiang {
         color: #f5f5f5;
         font-size: 13.5px;
         text-decoration: none;
@@ -72,35 +72,29 @@
         white-space: nowrap;
       }
 
-      .menu a:hover,
-      .menu-item:hover {
+      .cai-dan a:hover,
+      .cai-dan-xiang:hover {
         opacity: 1;
       }
 
-      .menu-item {
+      .cai-dan-xiang {
         position: relative;
         display: flex;
         align-items: center;
         gap: 4px;
       }
 
-      .caret {
-        font-size: 9px;
-        opacity: 0.7;
-        transition: transform 0.2s;
+      .xia-la-jian-tou {
+        display: none;
       }
 
-      .menu-item:hover .caret {
-        transform: rotate(180deg);
-      }
-
-      .nav-right {
+      .dao-hang-you {
         display: flex;
         align-items: center;
         gap: 16px;
       }
 
-      .login {
+      .deng-lu {
         color: #f5f5f5;
         font-size: 13.5px;
         text-decoration: none;
@@ -110,7 +104,7 @@
         cursor: pointer;
       }
 
-      .btn-green {
+      .an-niu-lv {
         background: #16d672;
         color: #06210f;
         font-size: 13.5px;
@@ -126,11 +120,11 @@
         transition: filter 0.15s;
       }
 
-      .btn-green:hover {
+      .an-niu-lv:hover {
         filter: brightness(1.08);
       }
 
-      .dropdown {
+      .xia-la-cai-dan {
         position: absolute;
         top: 30px;
         left: -12px;
@@ -146,13 +140,13 @@
         box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
       }
 
-      .menu-item:hover .dropdown {
+      .cai-dan-xiang:hover .xia-la-cai-dan {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
       }
 
-      .dd-item {
+      .xia-la-xiang {
         display: flex;
         gap: 11px;
         padding: 9px 10px;
@@ -161,11 +155,11 @@
         text-decoration: none;
       }
 
-      .dd-item:hover {
+      .xia-la-xiang:hover {
         background: rgba(255, 255, 255, 0.05);
       }
 
-      .dd-icon {
+      .xia-la-tu-biao {
         flex: none;
         width: 30px;
         height: 30px;
@@ -178,13 +172,13 @@
         color: #cfcfcf;
       }
 
-      .dd-text {
+      .xia-la-wen-zi {
         display: flex;
         flex-direction: column;
         gap: 3px;
       }
 
-      .dd-title {
+      .xia-la-biao-ti {
         display: flex;
         align-items: center;
         gap: 7px;
@@ -193,7 +187,7 @@
         color: #f5f5f5;
       }
 
-      .badge-new {
+      .xin-biao-qian {
         font-size: 9px;
         font-weight: 700;
         color: #16d672;
@@ -203,17 +197,11 @@
         letter-spacing: 0.5px;
       }
 
-      .dd-sub {
+      .xia-la-fu-biao-ti {
         font-size: 11.5px;
         color: #8a8f8b;
       }
 
-      /* 为 body 添加 padding-top 避免被固定导航栏遮挡 */
-      body {
-        padding-top: 54px;
-      }
-
-      /* ========== 原有样式保持 ========== */
       .shouping {
         position: relative;
         min-height: calc(100vh - 80px);
@@ -405,27 +393,26 @@
         .jianbian {
           font-size: 28px;
         }
-        .menu {
+        .cai-dan {
           display: none;
         }
       }
     </style>
   </head>
   <body>
-    <!-- 新导航栏 -->
-    <header class="nav">
-      <div class="nav-left">
+    <header class="dao-hang">
+      <div class="dao-hang-zuo">
         <a href="#" class="logo">TRAE</a>
-        <ul class="menu">
-          <li class="menu-item">
-            产品 <span class="caret">▾</span>
-            <div class="dropdown">
+        <ul class="cai-dan">
+          <li class="cai-dan-xiang">
+            产品 <span class="xia-la-jian-tou">▾</span>
+            <div class="xia-la-cai-dan">
               <a
                 href="TRAEWork.html"
-                class="dd-item"
+                class="xia-la-xiang"
                 style="text-decoration: none"
               >
-                <div class="dd-icon">
+                <div class="xia-la-tu-biao">
                   <svg
                     viewBox="0 0 24 24"
                     width="16"
@@ -438,15 +425,15 @@
                     <path d="M8 20h8" />
                   </svg>
                 </div>
-                <div class="dd-text">
-                  <div class="dd-title">
-                    TRAE Work <span class="badge-new">NEW</span>
+                <div class="xia-la-wen-zi">
+                  <div class="xia-la-biao-ti">
+                    TRAE Work <span class="xin-biao-qian">NEW</span>
                   </div>
-                  <div class="dd-sub">AI 工作助手</div>
+                  <div class="xia-la-fu-biao-ti">AI 工作助手</div>
                 </div>
               </a>
-              <a href="#" class="dd-item" style="text-decoration: none">
-                <div class="dd-icon">
+              <a href="#" class="xia-la-xiang" style="text-decoration: none">
+                <div class="xia-la-tu-biao">
                   <svg
                     viewBox="0 0 24 24"
                     width="16"
@@ -458,13 +445,13 @@
                     <path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12" />
                   </svg>
                 </div>
-                <div class="dd-text">
-                  <div class="dd-title">TRAE IDE</div>
-                  <div class="dd-sub">AI 原生 IDE</div>
+                <div class="xia-la-wen-zi">
+                  <div class="xia-la-biao-ti">TRAE IDE</div>
+                  <div class="xia-la-fu-biao-ti">AI 原生 IDE</div>
                 </div>
               </a>
-              <a href="#" class="dd-item" style="text-decoration: none">
-                <div class="dd-icon">
+              <a href="#" class="xia-la-xiang" style="text-decoration: none">
+                <div class="xia-la-tu-biao">
                   <svg
                     viewBox="0 0 24 24"
                     width="16"
@@ -479,9 +466,9 @@
                     <rect x="13" y="2" width="8" height="8" rx="1.5" />
                   </svg>
                 </div>
-                <div class="dd-text">
-                  <div class="dd-title">TRAE 企业版</div>
-                  <div class="dd-sub">企业级 AI 解决方案</div>
+                <div class="xia-la-wen-zi">
+                  <div class="xia-la-biao-ti">TRAE 企业版</div>
+                  <div class="xia-la-fu-biao-ti">企业级 AI 解决方案</div>
                 </div>
               </a>
             </div>
@@ -494,9 +481,9 @@
           <li><a href="#">知识库</a></li>
         </ul>
       </div>
-      <div class="nav-right">
-        <a href="#" class="login">登录</a>
-        <a href="#" class="btn-green">下载中心</a>
+      <div class="dao-hang-you">
+        <a href="#" class="deng-lu">登录</a>
+        <a href="#" class="an-niu-lv">下载中心</a>
       </div>
     </header>
 
